@@ -1,9 +1,8 @@
 footer {
-  background-color: var(--light-color);
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
+footer .footer > .columns-wrapper {
   margin: auto;
   max-width: 1200px;
   padding: 40px 24px 24px;
@@ -19,6 +18,15 @@ footer .footer div picture img {
 
 .footer-cols {
   text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-links ul {
+  padding-left: 0;
+}
+
+.footer-links li {
+  list-style-type: none;
 }
 
 @media (width >= 900px) {

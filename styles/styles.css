@@ -262,3 +262,21 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* authorable options */
+.dark-mode {
+  background-color: #000;
+  color: var(--light-color);
+}
+
+.spicy {
+  padding: 30px;
+}
+
+.spicy a {
+  color: var(--background-color);
+}
+
+.spicy a:Hover {
+  color: #cccccc;
+}
