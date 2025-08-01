@@ -5,8 +5,8 @@ const createMobileStep = (item) => {
   const summaryEl = document.createElement('summary');
   const summaryContent = `${item.step}: ${item.title}`;
   summaryEl.append(summaryContent);
-  details.prepend(summaryEl);
-  details.append(rtContent);
+  stepItem.prepend(summaryEl);
+  stepItem.append(rtContent);
 
   // const stepItem = `
   //   <details class="step-item">
