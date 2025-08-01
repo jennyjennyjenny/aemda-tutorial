@@ -69,10 +69,23 @@ const createDesktopContent = (stepsContent) => {
   stepContentWrapper.setAttribute('class', 'steps-full');
 
   const largeStepContent = stepsContent.map((item) => createLargeStepContent(item));
-  stepContentWrapper.append(largeStepContent);
+  // stepContentWrapper.replaceChildren(...largeStepContent);
+  const largeStepFrag = document.createDocumentFragment();
+  largeStepContent.forEach(item => {
+    const temp = document.createElement('div');
+    temp.innerHTML = item;
+    largeStepFrag.appendChild(temp.firstElementChild);
+  });
+  stepContentWrapper.appendChild(largeStepFrag);
 
   const stepsListItems = stepsContent.map((item) => createLargeStepListItem(item));
-  stepListElement.append(stepsListItems);
+  const stepListFrag = document.createDocumentFragment();
+  stepsListItems.forEach(listItem => {
+    const temp = document.createElement('div');
+    temp.innerHTML = listItem;
+    stepListFrag.appendChild(temp.firstElementChild);
+  });
+  stepListElement.appendChild(stepListFrag);
 
   desktopContentContainer.append(stepContentWrapper);
   desktopContentContainer.prepend(stepListElement);
