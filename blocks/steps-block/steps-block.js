@@ -1,7 +1,8 @@
 const createMobileStep = (item) => {
   const stepItem = document.createElement('details');
   stepItem.setAttribute('class', 'step-item');
-  const rtContent = item.richText;
+  const rtContent = document.createElement('div');
+  rtContent.innerHTML = item.richText;
   const summaryEl = document.createElement('summary');
   const summaryContent = `${item.step}: ${item.title}`;
   summaryEl.append(summaryContent);
