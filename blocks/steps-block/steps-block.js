@@ -24,7 +24,7 @@ const createMobileContent = (stepsContent) => {
 
   const mobileContents = stepsContent.map((item) => createMobileStep(item));
 
-  mobileContentContainer.append(JSON.parse(mobileContent));
+  mobileContentContainer.append(JSON.parse(mobileContents));
 
   return mobileContentContainer;
 };
