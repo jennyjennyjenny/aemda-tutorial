@@ -56,3 +56,7 @@
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
 }
+
+.tabs.fancy .tabs-panel {
+  border: 0;
+}

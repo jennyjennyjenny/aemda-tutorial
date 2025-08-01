@@ -18,7 +18,10 @@ footer .footer div picture img {
 
 .footer-cols {
   text-align: center;
-  margin-top: 2rem;
+}
+
+.footer-cols > div {
+  gap: 24px;
 }
 
 .footer-links ul {
