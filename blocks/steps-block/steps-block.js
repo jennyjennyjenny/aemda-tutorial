@@ -73,7 +73,7 @@ async function buildStepsBlock(dataLink) {
   const { pathname } = new URL(dataLink);
   const resp = await fetch(pathname);
   const json = await resp.json();
-  const stepsContent = JSON.parse(json.data);
+  const stepsContent = json.data;
   if (stepsContent.length < 1) {
     return;
   }
