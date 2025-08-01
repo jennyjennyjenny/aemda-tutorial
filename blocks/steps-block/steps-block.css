@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (width >= 900px) {
+@media (width < 900px) {
   .steps-block .desktop-hide {
     display: block;
   }

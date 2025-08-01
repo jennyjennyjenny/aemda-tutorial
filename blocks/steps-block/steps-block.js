@@ -23,7 +23,7 @@ const createMobileContent = (stepsContent) => {
 const createLargeStepListItem = (item) => {
   const stepListItem = `
     <li>
-      <a href="#step${item.index}">${item.step}</a>
+      <a href="#step${item.stepIndex}">${item.step}</a>
       <p>${item.title}</p>
     </li>
   `;
@@ -34,7 +34,7 @@ const createLargeStepListItem = (item) => {
 const createLargeStepContent = (item) => {
   const stepContent = `
     <div class="step-content">
-      <a name="step${item.index}">${item.step}</a>
+      <a name="step${item.stepIndex}">${item.step}</a>
       <h2>${item.title}</h2>
       <div class="step-rt">
         ${item.richText}
@@ -73,7 +73,7 @@ async function buildStepsBlock(dataLink) {
   const { pathname } = new URL(dataLink);
   const resp = await fetch(pathname);
   const json = await resp.json();
-  const stepsContent = json.data;
+  const stepsContent = JSON.parse(json.data);
   if (stepsContent.length < 1) {
     return;
   }
