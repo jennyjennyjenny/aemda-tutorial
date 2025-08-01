@@ -92,7 +92,7 @@ async function buildStepsBlock(dataLink) {
 }
 
 export default async function decorate(block) {
-  const links = [...block.querySelecorAll('a')].map((a) => a.href);
+  const links = [...block.querySelectorAll('a')].map((a) => a.href);
   const dataLink = links.find((link) => link.endsWith('stepcontent.json'));
   if (!dataLink) return;
 
