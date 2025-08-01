@@ -105,8 +105,8 @@ async function buildStepsBlock(dataLink) {
   const blockContainer = document.createElement('div');
   blockContainer.setAttribute('class', 'steps-block');
 
-  const mobileContent = createMobileContent(stepsContent);
-  const desktopContent = createDesktopContent(stepsContent);
+  const mobileContent = createMobileContent(sortedStepsContent);
+  const desktopContent = createDesktopContent(sortedStepsContent);
 
   blockContainer.append(desktopContent);
   blockContainer.prepend(mobileContent);
@@ -117,6 +117,7 @@ async function buildStepsBlock(dataLink) {
 
 export default async function decorate(block) {
   const links = [...block.querySelectorAll('a')].map((a) => a.href);
+  // content source is sorta hardcoded here - not rad
   const dataLink = links.find((link) => link.endsWith('stepcontent.json'));
   if (!dataLink) return;
 
