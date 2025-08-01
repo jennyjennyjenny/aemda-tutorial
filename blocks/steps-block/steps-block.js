@@ -71,7 +71,7 @@ const createDesktopContent = (stepsContent) => {
   const largeStepContent = stepsContent.map((item) => createLargeStepContent(item));
   // stepContentWrapper.replaceChildren(...largeStepContent);
   const largeStepFrag = document.createDocumentFragment();
-  largeStepContent.forEach(item => {
+  largeStepContent.forEach((item) => {
     const temp = document.createElement('div');
     temp.innerHTML = item;
     largeStepFrag.appendChild(temp.firstElementChild);
@@ -80,7 +80,7 @@ const createDesktopContent = (stepsContent) => {
 
   const stepsListItems = stepsContent.map((item) => createLargeStepListItem(item));
   const stepListFrag = document.createDocumentFragment();
-  stepsListItems.forEach(listItem => {
+  stepsListItems.forEach((listItem) => {
     const temp = document.createElement('div');
     temp.innerHTML = listItem;
     stepListFrag.appendChild(temp.firstElementChild);
@@ -105,8 +105,8 @@ async function buildStepsBlock(dataLink) {
   const blockContainer = document.createElement('div');
   blockContainer.setAttribute('class', 'steps-block');
 
-  const mobileContent = createMobileContent(sortedStepsContent);
-  const desktopContent = createDesktopContent(sortedStepsContent);
+  const mobileContent = createMobileContent(stepsContent);
+  const desktopContent = createDesktopContent(stepsContent);
 
   blockContainer.append(desktopContent);
   blockContainer.prepend(mobileContent);
