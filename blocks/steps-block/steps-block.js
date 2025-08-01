@@ -4,11 +4,10 @@ const createMobileStep = (item) => {
   const rtContent = item.richText;
   const summaryEl = document.createElement('summary');
   const summaryContent = `${item.step}: ${item.title}`;
-  // summaryEl.append(summaryContent);
-  summaryEl.innerHTML = summaryContent;
-  stepItem.innerHTML = summaryEl + rtContent;
-  // stepItem.prepend(summaryEl);
-  // stepItem.append(rtContent);
+  summaryEl.append(summaryContent);
+
+  stepItem.prepend(summaryEl);
+  stepItem.append(rtContent);
 
   // const stepItem = `
   //   <details class="step-item">
@@ -26,7 +25,7 @@ const createMobileContent = (stepsContent) => {
 
   const mobileContents = stepsContent.map((item) => createMobileStep(item));
 
-  mobileContentContainer.append(mobileContents);
+  mobileContentContainer.append(...mobileContents);
 
   return mobileContentContainer;
 };
